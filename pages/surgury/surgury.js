@@ -11,14 +11,21 @@ angular.module('app')
                 id: doctorId,
                 surgurys: []
             };
-            $http.get('/assets/data/getDoctorInfo.json').then(function (rtn) {
-                var allSurgurys = rtn.data.data;
-                $scope.currentSurgury = allSurgurys.find(function (item) {
-                    return item.doctorId == doctorId;
-                });
-                console.log($scope.currentSurgury.surgurys)
 
-            });
+            function getDataBydoctorId(doctorId) {
+                $http.get('/assets/data/getDoctorInfo.json').then(function (rtn) {
+                    var allSurgurys = rtn.data.data;
+                    $scope.currentSurgury = allSurgurys.find(function (item) {
+                        return item.doctorId == doctorId;
+                    });
+                    console.log($scope.currentSurgury.surgurys)
+
+                });
+
+            }
+
+            // 进入刷新界面
+            getDataBydoctorId(doctorId);
 
 
             $scope.addSelectectSurgury = function () {
@@ -34,7 +41,10 @@ angular.module('app')
             }
             $scope.refershData = function (event) {
                 var data = event.dataTransfer.getData('text');
-                console.log(data);
+                var surgury = JSON.parse(JSON.parse(data));
+
+                getDataBydoctorId(surgury.id);
+
             }
 
 

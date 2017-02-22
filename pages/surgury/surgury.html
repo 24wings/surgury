@@ -1,4 +1,4 @@
-<div class="col-md-9 fr" draggable="true" ondragover="angular.element(this).scope().allowDrop(event)" ondrop="dropDoctor(event)">
+<div class="col-md-9 fr" draggable="true" ondragover="angular.element(this).scope().allowDrop(event)" ondrop="angular.element(this).scope().refershData(event)">
     <div class="row tablist">
         <div class="col-md-1 listfl">
             <span>{{selectedSurgury+1}}</span>
