@@ -13,7 +13,7 @@ angular.module('app')
             };
 
             function getDataBydoctorId(doctorId) {
-                $http.get('/assets/data/getDoctorInfo.json').then(function (rtn) {
+                $http.get('surgury/assets/data/getDoctorInfo.json').then(function (rtn) {
                     var allSurgurys = rtn.data.data;
                     $scope.currentSurgury = allSurgurys.find(function (item) {
                         return item.doctorId == doctorId;
