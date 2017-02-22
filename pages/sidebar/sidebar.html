@@ -1,0 +1,40 @@
+<div class="col-md-3 fl">
+    <div id="lanrenzhijia" style="margin-bottom:5px">
+        日期：<input class="jcDate" style="width:300px; height:20px; line-height:20px;" />
+    </div>
+    科室：
+    <select name="" id="">
+						<option value=""></option>
+						<option value="">神经内科</option>
+						<option value="">神经外科</option>
+						<option value="">妇产科</option>
+						<option value="">骨科</option>
+						<option value="">牙科</option>
+						<option value="">泌尿科</option>
+						<option value="">急诊室</option>
+					</select>
+    <p>手术（30）</p>
+    <div class="overtabel">
+        <table border="" cellspacing="" cellpadding="" id="surgerys">
+            <tr draggable="true">
+                <th>申请时间</th>
+                <th>科室</th>
+                <th>医师</th>
+                <th>手术</th>
+            </tr>
+            <tr onclick="angular.element(this).scope().hello()" ng-repeat="surgury in surgurys" draggable="true" drag-surgury="ss">
+                <td>{{surgury.time}}</td>
+                <td>{{surgury.department}}</td>
+                <td>{{surgury.doctor}}</td>
+                <td>{{surgury.surgery}}</td>
+                <td ng-click="$ctrl.viewSurgury(surgury)">查看</td>
+            </tr>
+        </table>
+    </div>
+    <p>手术（30）</p>
+    <p>主麻医师</p>
+    <p>副麻医师</p>
+    <p>洗手护士</p>
+    <p>巡回护士</p>
+    <p></p>
+</div>

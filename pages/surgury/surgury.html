@@ -1,0 +1,74 @@
+<div class="col-md-9 fr" draggable="true" ondragover="allowDrop(event)" ondrop="dropDoctor(event)">
+    <div class="row tablist">
+        <div class="col-md-1 listfl">
+            <span>{{selectedSurgury+1}}</span>
+            <span>手<br>术<br>间<br></span>
+        </div>
+        <div class="col-md-11 listfr">
+            <div class="item">
+                <button ng-click="addSelectectSurgury()">↑</button>
+                <button ng-click="minSelectectSurgury()">↓</button>
+            </div>
+            <div class="item2">
+                <div class="row biaoge">
+                    <div class="col-md-4">手术</div>
+                    <div class="col-md-4">医生</div>
+                    <div class="col-md-4">护士</div>
+                </div>
+                <table border="" cellspacing="" cellpadding="">
+                    <tr>
+                        <th>台</th>
+                        <th>病人</th>
+                        <th>手术医师</th>
+                        <th>手术名称</th>
+                        <th>手术时间</th>
+                        <th>主麻</th>
+                        <th>副麻1</th>
+                        <th>副麻2</th>
+                        <th>洗手1</th>
+                        <th>洗手2</th>
+                        <th>巡回1</th>
+                        <th>巡回2</th>
+                        <th>备注</th>
+                        <th>删除</th>
+                    </tr>
+                </table>
+                <table border="" cellspacing="" cellpadding="" style="background: red;" class="xinxi">
+                    <tr></tr>
+                    <tr>
+                        <td>Data</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="conent">
+        <div class="page" drop-surgury>
+            <div class="row list-scheduling">
+                <div class="col-md-2 {{$index==selectedSurgury?'activeSurgury':''}}" ng-repeat="surgury in currentSurgury.surgurys;">
+                    <p>{{surgury.id}}</p>
+                    <ul>
+                        <li>手术台数:{{surgury.num}}</li>
+                        <li>手术医师:{{surgury.doctor.join(',')}}</li>
+                        <li>麻醉医师:{{hocusDoctor.join(',')}}</li>
+                        <li>护士:{{nurse.join(',')}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="pagnation"></div>
+    </div>
+    <div class="summary">
+        <p>总台数：1</p>
+        <div class="btn-group btn1">
+            <a href="" class="btn btn-primary radius btnup">上一页</a>
+            <a href="#list_scheduling" class="btn btn-default radius btndown quxiao">下一页</a>
+            <a href="" class="btn btn-default radius btndown">提交</a>
+        </div>
+    </div>
+    <div class="operation">
+        <p>2013/8/1 16:16:01 手术医师：方祖军，申请科室：泌尿科；病人名称：陈文君；手术名称：膀胱镜拔-J管；分配1号手术间</p>
+        <p>2013/8/1 16:16:19 主麻医师：严惠昌（L-0）；分配1号手术间</p>
+        <p>2013/8/1 16:16:25 副麻医师：余琼（L-0）；分配1号手术间</p>
+    </div>
+</div>
