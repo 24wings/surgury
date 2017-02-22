@@ -1,6 +1,6 @@
 angular.module('app')
     .component('sidebar', {
-        templateUrl: 'pages/sidebar/sidebar.html',
+        templateUrl: './pages/sidebar/sidebar.html',
         bindings: {
             $router: '<'
         },

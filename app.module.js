@@ -5,7 +5,7 @@ angular.module('app', ['ngComponentRouter', 'ngRoute', 'app.directives'])
 
     .value('$routerRootComponent', 'app')
     .component('app', {
-        templateUrl: 'app.module.html',
+        templateUrl: './app.module.html',
         $routeConfig: [{
             path: '/',
             name: 'Index',

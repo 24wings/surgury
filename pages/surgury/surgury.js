@@ -1,6 +1,6 @@
 angular.module('app')
     .component('surgury', {
-        templateUrl: 'pages/surgury/surgury.html',
+        templateUrl: './pages/surgury/surgury.html',
         bindings: {
             $router: '<'
         },
