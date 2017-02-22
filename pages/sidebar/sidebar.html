@@ -22,7 +22,8 @@
                 <th>医师</th>
                 <th>手术</th>
             </tr>
-            <tr onclick="angular.element(this).scope().hello()" ng-repeat="surgury in surgurys" draggable="true" drag-surgury="ss">
+            <tr ondragstart="angular.element(this).scope().setDragData(this.dataset.surgury,event)" ondragend="angular.element(this).scope().delete(this.dataset.surgury)"
+                data-surgury="{{surgury}}" ng-repeat="surgury in surgurys" draggable="true">
                 <td>{{surgury.time}}</td>
                 <td>{{surgury.department}}</td>
                 <td>{{surgury.doctor}}</td>

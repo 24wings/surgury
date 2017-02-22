@@ -11,7 +11,7 @@ angular.module('app')
                 id: doctorId,
                 surgurys: []
             };
-            $http.get('/data/getDoctorInfo.json').then(function (rtn) {
+            $http.get('/assets/data/getDoctorInfo.json').then(function (rtn) {
                 var allSurgurys = rtn.data.data;
                 $scope.currentSurgury = allSurgurys.find(function (item) {
                     return item.doctorId == doctorId;
@@ -29,7 +29,13 @@ angular.module('app')
                 $scope.selectedSurgury == 0 ? '' : $scope.selectedSurgury--;
 
             }
-
+            $scope.allowDrop = function (event) {
+                event.preventDefault();
+            }
+            $scope.refershData = function (event) {
+                var data = event.dataTransfer.getData('text');
+                console.log(data);
+            }
 
 
         }
